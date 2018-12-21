@@ -184,8 +184,8 @@ class FilterScreen extends React.Component {
 
             <Col style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
               <DatePicker
-                defaultDate={new Date(an, mois, jour-1)}
-                minimumDate={new Date(an, mois, jour-1)}
+                defaultDate={new Date(an, mois, jour)}
+                minimumDate={new Date(an, mois, jour)}
                 maximumDate={new Date(an, mois, jour+15)}
                 locale={"fr"}
                 timeZoneOffsetInMinutes={undefined}

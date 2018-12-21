@@ -33,21 +33,33 @@ class AccountScreen extends React.Component {
         price={event.price}
         eventId={event.eventId}
         description={event.description}
+        name={event.name}
         handleEventLike={this.props.handleEventLike}
         islike={true}  />);
   }
 
   if (this.props.addEvent) {
+    var photobis = require ("../../assets/Images/eventphoto14.png");
+      var Iconbis = require ("../../assets/Icons/CrocheCouleur.png");
       var addEventList = this.props.addEvent.map((event, i) =>
-      <EventListItem key={i}
-        artist={event.artist}
-        styleM={event.styleM}
-        eventDate={event.eventDate}
-        price={event.price}
-        eventId={event.eventId}
-        description={event.description}
-        handleEventLike={this.props.handleEventLike}
-        islike={true}  />);
+      <ListItem
+        thumbnail>
+
+        <Left>
+          <Thumbnail square large source={photobis}/>
+        </Left>
+        <Body>
+          <Text style={styles.titleText}>{`Artiste: ${event.artist}`}</Text>
+          <Text style={styles.titleText}>{`Style: ${event.style}`}</Text>
+          <Text style={styles.head}>{`le ${event.eventDate} à ${event.description}`}</Text>
+          <Text style={styles.head}>{`${event.name} entrée ${event.price}€`}</Text>
+          <Text style={{display: 'none'}}>{event.eventId}</Text>
+        </Body>
+        <Right>
+            <Thumbnail source={Iconbis} />
+        </Right>
+      </ListItem>
+      );
   }
 
 
